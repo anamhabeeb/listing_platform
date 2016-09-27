@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		.image {
+			  background: url('assets/background6.jpg') no-repeat center center fixed; 
+			  margin-top: 0px;
+			  background-position: center top;
+             -webkit-background-size: cover;
+             -moz-background-size: cover;
+            -o-background-size: cover;
+             background-size: cover;
+             height: 600px;
+
+		}
+
+	   
+
+	  
+	  /*  ul.header{
+    list-style-type: none;
+    margin-top:60px;
+    
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    margin-top:70px;
+    height: 60px;
+    border-radius: 25px;
+}
+
+li {
+    float: right;
+}
+
+       li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+  li a:hover {
+    background-color: #111;
+ 
+  } */
+
+  .line {
+  	outline-style: ridge;
+  	color: black;
+  }
+  pre {
+      font-size: 20px;
+      font-style: helvetica;
+
+       }
+  
+  .house-image {
+  	  float: right;
+  	  background-size: contain;
+
+  	  	}
+   .search {
+
+    align-content: center;
+   }
+   
+
+
+   
+	</style>
+</head>
+<body>
+
+
+	<!--<ul class="header">
+		  <li><a class = "header-class" href="#home">Home</a></li>
+          <li><a class = "header-class" href="#news">News</a></li>
+          <li><a class = "header-class" href="#contact">Contact</a></li>
+          <li><a class = "header-class" href="#about">About</a></li>
+	</ul> -->
+
+
+
+
+
+<div class ="image"></div>
+
+
+
+<div class="line"><p></p></div>
+
+<br><h2>You can search houses here</h2>
+<div class="search">
+
+
+<%= form_tag('/', :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search houses" %>
+<%= submit_tag "Search" %>
+<% end %>
+
+
+  
+</div>
+
+
+
+<div class="line"><p></p></div>
+
+
+<br><h2>House Listings</h2>
+
+<div>
+
+<ul class="info">
+<% @houses.each do |house| %>
+<div class="infofirst">
+<pre class="house-image"><%= image_tag(house.image) %></pre>
+<br><pre><li>Name : "<%= house.name%>"</li></pre>
+<pre><li>BHK : <%= house.bhk%></li></pre>
+<pre><li>Rent : <%= house.rent %></li></pre>
+<pre><li>Deposit : <%= house.deposit %></li></pre>
+<pre><li>Area : <%= house.area %></li></pre>
+<pre><li>Locality : <%= house.locality %></li></pre>
+<pre><li>Amenities : <%= house.amenities %></li></pre>
+
+</div>
+
+<div class="line"><p></p></div>
+
+<% end %>   
+
+</ul>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,45 @@
+<%= form_for :article, url: articles_path do |f| %>
+  <p>
+    <%= f.label :Name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :BHK %><br>
+    <%= f.text_field :bhk %>
+  </p>
+
+  <p>
+    <%= f.label :Rent %><br>
+    <%= f.text_field :rent %>
+  </p>
+
+  <p>
+    <%= f.label :Deposit %><br>
+    <%= f.text_field :deposit %>
+  </p>
+
+  <p>
+    <%= f.label :Area %><br>
+    <%= f.text_area :area %>
+  </p>
+
+  <p>
+    <%= f.label :Locality %><br>
+    <%= f.text_area :locality %>
+  </p>
+
+  <p>
+    <%= f.label :Amenities %><br>
+    <%= f.text_area :amenities %>
+  </p>
+
+  <p>
+    <%= f.label :Image %><br>
+    <%= f.text_field :image %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
